@@ -1,0 +1,679 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.17 (TeX Live 2016/Debian) (preloaded format=pdflatex 2017.8.2)  14 AUG 2017 10:00
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**heuristic_analysis.tex
+(./heuristic_analysis.tex
+LaTeX2e <2017/01/01> patch level 3
+Babel <3.9r> and hyphenation patterns for 3 language(s) loaded.
+(/usr/share/texlive/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/size12.clo
+File: size12.clo 2014/09/29 v1.4h Standard LaTeX file (size option)
+)
+\c@part=\count79
+\c@section=\count80
+\c@subsection=\count81
+\c@subsubsection=\count82
+\c@paragraph=\count83
+\c@subparagraph=\count84
+\c@figure=\count85
+\c@table=\count86
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2014/10/28 v1.0g Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks14
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2016/10/09 v1.0u Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 99.
+
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2017/01/12 v0.06k Graphics/color for pdfTeX
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count87
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(./heuristic_analysis.aux)
+\openout1 = `heuristic_analysis.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 4.
+LaTeX Font Info:    ... okay on input line 4.
+
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count88
+\scratchdimen=\dimen105
+\scratchbox=\box26
+\nofMPsegments=\count89
+\nofMParguments=\count90
+\everyMPshowfont=\toks15
+\MPscratchCnt=\count91
+\MPscratchDim=\dimen106
+\MPnumerator=\count92
+\makeMPintoPDFobject=\count93
+\everyMPtoPDFconversion=\toks16
+) (/usr/share/texlive/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
+Package: pdftexcmds 2016/05/21 v0.22 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty
+Package: ifluatex 2016/05/16 v1.4 Provides the ifluatex switch (HO)
+Package ifluatex Info: LuaTeX not detected.
+)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty
+Package: ifpdf 2016/05/14 v3.1 Provides the ifpdf switch
+)
+Package pdftexcmds Info: LuaTeX not detected.
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+Package etexcmds Info: Could not find \expanded.
+(etexcmds)             That can mean that you are not using pdfTeX 1.50 or
+(etexcmds)             that some package has redefined \expanded.
+(etexcmds)             In the latter case, load this package earlier.
+)))
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.png,.pdf,.jpg,.mps,.jpeg,.jbig2,.jb2,.PNG,.PDF,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
+e
+))
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <12> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <8> on input line 14.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 14.
+
+Overfull \hbox (3.1163pt too wide) in paragraph at lines 18--20
+\OT1/cmr/m/n/12 nus for the op-po-nent). Dis-tance is mea-sured ei-ther by tra-
+di-tional Pythagorean
+ []
+
+[1
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
+Overfull \hbox (9.86613pt too wide) in paragraph at lines 46--48
+[]\OT1/cmr/m/n/12 At this point, we stop con-sid-er-ing the worst per-form-ing 
+heuris-tics (Diff[]Dist,
+ []
+
+[2]
+Overfull \hbox (14.88773pt too wide) in paragraph at lines 89--91
+\OT1/cmr/m/n/12 vari-a-tion of the Stages al-go-rithm (where we us diff, dist, 
+and check[]future[]steps()
+ []
+
+[3] <Dist_weights.jpg, id=15, 642.4pt x 481.8pt>
+File: Dist_weights.jpg Graphic file (type jpg)
+ <use Dist_weights.jpg>
+Package pdftex.def Info: Dist_weights.jpg used on input line 125.
+(pdftex.def)             Requested size: 390.0pt x 292.5081pt.
+
+[4 <./Dist_weights.jpg>]
+Overfull \hbox (363.35037pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved    Custom      Custom_2  
+   Diff_Dist    Dist_Diff  Diff_dist_sum  Next_Step      Stage[] 
+ []
+
+
+Overfull \hbox (381.87538pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      97  |   3    95  |   5    92  |   8 
+   83  |  17    93  |   7    96  |   4    93  |   7    90  |  10[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     73  |  27    70  |  30    74  |  26 
+   64  |  36    73  |  27    74  |  26    73  |  27    79  |  21[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    72  |  28    78  |  22    77  |  23 
+   67  |  33    68  |  32    73  |  27    71  |  29    74  |  26[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   77  |  23    74  |  26    74  |  26 
+   66  |  34    71  |  29    65  |  35    67  |  33    76  |  24[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     50  |  50    53  |  47    48  |  52 
+   47  |  53    53  |  47    53  |  47    42  |  58    52  |  48[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    53  |  47    55  |  45    53  |  47 
+   42  |  58    60  |  40    68  |  32    47  |  53    61  |  39[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   45  |  55    51  |  49    52  |  48 
+   39  |  61    48  |  52    47  |  53    43  |  57    50  |  50[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (363.35037pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      66.7%        68.0%        67.1%   
+     58.3%        66.6%        68.0%        62.3%        68.9%[] 
+ []
+
+
+Overfull \hbox (363.35037pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved    Custom      Custom_2  
+   Diff_Dist    Dist_Diff  Diff_dist_sum  Next_Step      Stage[] 
+ []
+
+
+Overfull \hbox (381.87538pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      94  |   6    94  |   6    95  |   5 
+   88  |  12    92  |   8    92  |   8    95  |   5    95  |   5[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     74  |  26    74  |  26    77  |  23 
+   72  |  28    70  |  30    74  |  26    67  |  33    79  |  21[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    77  |  23    78  |  22    66  |  34 
+   63  |  37    71  |  29    76  |  24    65  |  35    73  |  27[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   70  |  30    66  |  34    69  |  31 
+   67  |  33    70  |  30    76  |  24    74  |  26    72  |  28[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     47  |  53    54  |  46    50  |  50 
+   47  |  53    48  |  52    57  |  43    47  |  53    44  |  56[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    60  |  40    56  |  44    55  |  45 
+   42  |  58    54  |  46    55  |  45    54  |  46    55  |  45[] 
+ []
+
+
+Overfull \hbox (375.70038pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   49  |  51    50  |  50    46  |  54 
+   38  |  62    48  |  52    49  |  51    40  |  60    54  |  46[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (363.35037pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      67.3%        67.4%        65.4%   
+     59.6%        64.7%        68.4%        63.1%        67.4%[] 
+ []
+
+[5]
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved    Custom    Diff_dist_su
+m Mod Stages[] 
+ []
+
+
+Overfull \hbox (60.77522pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      89  |  11    93  |   7    92  |   8 
+   91  |   9[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     76  |  24    66  |  34    68  |  32 
+   73  |  27[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    72  |  28    65  |  35    74  |  26 
+   71  |  29[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   67  |  33    69  |  31    77  |  23 
+   69  |  31[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     49  |  51    50  |  50    55  |  45 
+   52  |  48[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    54  |  46    57  |  43    50  |  50 
+   57  |  43[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   46  |  54    49  |  51    53  |  47 
+   51  |  49[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      64.7%        64.1%        67.0%   
+     66.3%[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+[6]
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (48.42522pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved Diff_dist_sum   DD_half  
+    DD_subt[] 
+ []
+
+
+Overfull \hbox (60.77522pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      58  |   2    58  |   2    57  |   3 
+   58  |   2[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     43  |  17    44  |  16    44  |  16 
+   46  |  14[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    41  |  19    44  |  16    47  |  13 
+   43  |  17[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   44  |  16    45  |  15    47  |  13 
+   48  |  12[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     28  |  32    34  |  26    32  |  28 
+   32  |  28[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    38  |  22    32  |  28    33  |  27 
+   35  |  25[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   28  |  32    28  |  32    32  |  28 
+   25  |  35[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      66.7%        67.9%        69.5%   
+     68.3%[] 
+ []
+
+
+Overfull \hbox (208.9753pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved Diff_dist_sum   DD_half  
+    DD_subt   DD_full_subt    DD_pt_8[] 
+ []
+
+
+Overfull \hbox (221.3253pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost   Won | Lost   Won | Lost[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      57  |   3    52  |   8    58  |   2 
+   58  |   2    60  |   0    57  |   3[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     46  |  14    44  |  16    40  |  20 
+   43  |  17    50  |  10    42  |  18[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    44  |  16    42  |  18    42  |  18 
+   46  |  14    45  |  15    45  |  15[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   41  |  19    45  |  15    42  |  18 
+   49  |  11    46  |  14    41  |  19[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     29  |  31    29  |  31    28  |  32 
+   28  |  32    35  |  25    33  |  27[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    36  |  24    37  |  23    32  |  28 
+   32  |  28    37  |  23    34  |  26[] 
+ []
+
+[7]
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   33  |  27    31  |  29    33  |  27 
+   32  |  28    31  |  29    23  |  37[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (202.8003pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      68.1%        66.7%        65.5%   
+     68.6%        72.4%        65.5%[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved DD_full_subt  DD_dbl_sub 
+  Adv stages[] 
+ []
+
+
+Overfull \hbox (60.77522pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      52  |   8    55  |   5    56  |   4 
+   57  |   3[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     38  |  22    43  |  17    48  |  12 
+   48  |  12[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    44  |  16    39  |  21    43  |  17 
+   55  |   5[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   42  |  18    43  |  17    42  |  18 
+   44  |  16[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     30  |  30    37  |  23    32  |  28 
+   29  |  31[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    34  |  26    30  |  30    32  |  28 
+   36  |  24[] 
+ []
+
+
+Overfull \hbox (54.60022pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   31  |  29    31  |  29    27  |  33 
+   30  |  30[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (42.25021pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      64.5%        66.2%        66.7%   
+     71.2%[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+[8]
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[] \OT1/cmtt/m/n/12 Match #   Opponent    AB_Improved Diff Late GameDD_full_sub
+t  DD_dbl_sub   DD_2.5_sub    DD_3_sub[] 
+ []
+
+
+Overfull \hbox (221.3253pt too wide) in paragraph at lines 341--341
+[]                        \OT1/cmtt/m/n/12 Won | Lost   Won | Lost   Won | Lost
+   Won | Lost   Won | Lost   Won | Lost[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 1       Random      55  |   5    56  |   4    58  |   2 
+   58  |   2    56  |   4    56  |   4[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 2       MM_Open     43  |  17    41  |  19    41  |  19 
+   50  |  10    45  |  15    48  |  12[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 3      MM_Center    48  |  12    45  |  15    51  |   9 
+   41  |  19    44  |  16    38  |  22[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 4     MM_Improved   41  |  19    48  |  12    43  |  17 
+   45  |  15    43  |  17    46  |  14[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 5       AB_Open     37  |  23    29  |  31    33  |  27 
+   25  |  35    29  |  31    31  |  29[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 6      AB_Center    30  |  30    37  |  23    35  |  25 
+   32  |  28    35  |  25    38  |  22[] 
+ []
+
+
+Overfull \hbox (215.1503pt too wide) in paragraph at lines 341--341
+[]    \OT1/cmtt/m/n/12 7     AB_Improved   29  |  31    25  |  35    32  |  28 
+   32  |  28    29  |  31    28  |  32[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+
+Overfull \hbox (202.8003pt too wide) in paragraph at lines 341--341
+[]           \OT1/cmtt/m/n/12 Win Rate:      67.4%        66.9%        69.8%   
+     67.4%        66.9%        67.9%[] 
+ []
+
+
+Overfull \hbox (66.95023pt too wide) in paragraph at lines 341--341
+[]\OT1/cmtt/m/n/12 ------------------------------------------------------------
+--------------[] 
+ []
+
+[9] [10] (./heuristic_analysis.aux) ) 
+Here is how much of TeX's memory you used:
+ 1496 strings out of 494945
+ 21492 string characters out of 6181033
+ 90426 words of memory out of 5000000
+ 4799 multiletter control sequences out of 15000+600000
+ 7151 words of font info for 26 fonts, out of 8000000 for 9000
+ 14 hyphenation exceptions out of 8191
+ 39i,5n,25p,532b,241s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/share/texlive/texmf-dist/fonts/type1
+/public/amsfonts/cm/cmbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/publi
+c/amsfonts/cm/cmr12.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfo
+nts/cm/cmtt12.pfb>
+Output written on heuristic_analysis.pdf (10 pages, 97423 bytes).
+PDF statistics:
+ 50 PDF objects out of 1000 (max. 8388607)
+ 33 compressed objects within 1 object stream
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+

@@ -1,0 +1,344 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{graphicx}
+
+\begin{document}
+Isolation Game Agent -- Christine Payne
+\section{Heuristic Analysis}
+Initially, we consider several different types of heuristics.  Custom, Custom\_2, Next\_Step, and Stage all use a function check\_future\_steps(), 
+which looks ahead to consider how long a run the player would have if they chose this move.  This is similar to the overall minimax search, except that 
+it ignores moves the opponent might make, and it also does not make a copy of the board at each step. This is an effort to make a fast estimate as to 
+whether a move would leave open several future moves or would be near a dead end.
+
+Next\_Step uses this heuristic for the entire game (I expected this would perform badly, since early on few moves would be near a dead end, and it would
+give little insight how to pick a good one).  Custom, Custom\_2, and Stage are all similar where they start out using a Distance From Center metric, then as the 
+game progresses they use the number of legal moves (for the player minus for the opponent) and then end with this check\_future\_steps\(\) heuristic.  Progression
+through the game is determined by the number of empty spaces on the board.
+
+
+Diff\_Dist, Dist\_Diff, and Diff\_dist\_sum all use combinations only of Dist (distance from the center) and Diff (number of legal moves for the player minus for the opponent).  Distance is measured either by traditional Pythagorean (the square of x and square of y) or by counting the number of steps from the middle
+square (number of squares up or down, plus number of squares left or right).
+
+Diff\_Dist uses Diff for the first half of the game, and Dist for the second.  Dist\_Diff is the opposite. Diff\_dist\_sum uses a weighted sum of the two
+throughout the whole game.
+
+Prior to these tests, we also had tried variations of weighting own legal moves remaining vs opponent legal moves remaining (inside of what we call Diff). We did not find any repeatable advantage over a simple OWN\_MOVES - LEGAL\_MOVES
+
+Because we found a large amount of variation in each tournament run, we changed the number of games to be 100 or 80 per face-off, and in some cases we
+ran the whole tournament twice.
+
+\newpage
+\begin{verbatim}
+
+Two different tournaments of 100 games per match. Win rates:
+                 First tournament    Second tournament
+AB_Improved            66.7%            67.3%
+Custom                 68.0%            67.4%
+Custom_2               67.1%            65.4%
+Diff_Dist              58.3%            59.6%
+Dist_Diff              66.6%            64.7%
+Diff_dist_sum          68.0%            68.4%
+Next_Step              62.3%            63.1%
+Stage                  68.9%            67.4%
+
+  
+\end{verbatim}
+
+At this point, we stop considering the worst performing heuristics (Diff\_Dist, and Next\_Step). We try out a variation of
+Stage.  The main heuristics stay the same, but we adjust weightings in each.
+
+
+\begin{verbatim}
+One tournament of 100 matches per face-off
+AB_Improved             64.7%
+Custom                  64.1%
+Diff_Dist_sum           67.0%
+Mod_Stages              66.3%
+
+\end{verbatim}
+
+We consider if it is better to use squared distance (Pythagorean distance) as in the heuristic given to us in sample\_players rather than counting the number of steps away from the center.
+
+\begin{verbatim}
+One tournament of 60 matches per face-off
+AB_Improved             66.9%
+Diff_Dist_sum           70.2%
+Diff_SqDist             63.3%
+
+\end{verbatim}
+
+At this point, Diff\_Dist\_sum seems to be the only heuristic that is consistently out-performing AB\_Improved. We now focus on the relative weights
+for Diff and Dist.   Initially we used a positive version of Dist (meaning a higher score is given to squares further from the center). While this is counter-intuitive, we noticed that AB\_Center consistently performed well, so we aimed to include some of that success.  (Since the minimax algorithm looks several steps ahead, we thought perhaps looking for a corner square many steps ahead pushes one to choose a central square early on.)   Now in these variations, we consider weighting
+Dist negatively (giving a higher score to squares closest to the center).
+
+
+\begin{verbatim}
+60 Matches
+Diff+ (w*Dist)
+------------------------------------
+Name                w       Win Rate
+AB_Improved                  68.1%
+DD_pt_8            .8        65.5%				
+DD_half            .5        65.5%				
+Diff_dist_sum      .3        66.7%				
+DD_subt           -.3        68.6%				
+DD_full_subt      -.6        72.4%				
+
+
+\end{verbatim}
+
+Now we explore making Dist even more heavily negative. We also add a variation of the Stages algorithm (where we us diff, dist,
+and check\_future\_steps() at different stages of the game).
+
+\begin{verbatim}
+60 Matches
+AB_Improved         64.5%
+DD_full_subt        66.2%       (w = -.6)
+DD_dbl_sub          66.7%       (w = -2)
+Adv_stage           71.2%
+
+
+
+\end{verbatim}
+From this, Adv\_stages looks very promising. However, when we run two back-to-back comparisons to confirm this finding, we see this was just a fluke:
+
+\begin{verbatim}
+                   
+
+80 Matches each tournament
+               First tournament   Second tournament
+AB_Improved         68.0%               69.6%
+Adv stages          65.2%               67.1%
+
+
+
+\end{verbatim}
+
+At this point, we return to a simple combination of Dist and Diff.  It seems the added computational time from creating a more complicated look ahead is not
+worth it.   Finally we decide to stay with a simple and fast heuristic. It remains only to determine the best weighting of Dist and Diff. We run one last
+set looking at a few other weights we haven't yet considered, and then chart average success vs the weight of Dist.
+
+We graph results vs weighting of Dist in Figure \ref{fig:dd-combinations}.  Each win rate is normalized by the AB\_Improved win rate for that tournament. If the agent was run in multiple 
+tournaments, we take an average win rate, weighted by number of games in that tournament.
+
+
+\begin{figure}
+  \includegraphics[width=\linewidth]{Dist_weights.jpg}
+  \caption{Normalized win rate for different combinations of Diff (difference between own legal moves and opponent legal moves) and Dist (steps from center square).}
+  \label{fig:dd-combinations}
+\end{figure}
+
+
+
+\newpage
+
+\section{Tournament Results}
+These are the full records for the results cited earlier.
+\begin{verbatim}
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved    Custom      Custom_2     Diff_Dist    Dist_Diff  Diff_dist_sum  Next_Step      Stage    
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      97  |   3    95  |   5    92  |   8    83  |  17    93  |   7    96  |   4    93  |   7    90  |  10  
+    2       MM_Open     73  |  27    70  |  30    74  |  26    64  |  36    73  |  27    74  |  26    73  |  27    79  |  21  
+    3      MM_Center    72  |  28    78  |  22    77  |  23    67  |  33    68  |  32    73  |  27    71  |  29    74  |  26  
+    4     MM_Improved   77  |  23    74  |  26    74  |  26    66  |  34    71  |  29    65  |  35    67  |  33    76  |  24  
+    5       AB_Open     50  |  50    53  |  47    48  |  52    47  |  53    53  |  47    53  |  47    42  |  58    52  |  48  
+    6      AB_Center    53  |  47    55  |  45    53  |  47    42  |  58    60  |  40    68  |  32    47  |  53    61  |  39  
+    7     AB_Improved   45  |  55    51  |  49    52  |  48    39  |  61    48  |  52    47  |  53    43  |  57    50  |  50  
+--------------------------------------------------------------------------
+           Win Rate:      66.7%        68.0%        67.1%        58.3%        66.6%        68.0%        62.3%        68.9%    
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved    Custom      Custom_2     Diff_Dist    Dist_Diff  Diff_dist_sum  Next_Step      Stage    
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      94  |   6    94  |   6    95  |   5    88  |  12    92  |   8    92  |   8    95  |   5    95  |   5  
+    2       MM_Open     74  |  26    74  |  26    77  |  23    72  |  28    70  |  30    74  |  26    67  |  33    79  |  21  
+    3      MM_Center    77  |  23    78  |  22    66  |  34    63  |  37    71  |  29    76  |  24    65  |  35    73  |  27  
+    4     MM_Improved   70  |  30    66  |  34    69  |  31    67  |  33    70  |  30    76  |  24    74  |  26    72  |  28  
+    5       AB_Open     47  |  53    54  |  46    50  |  50    47  |  53    48  |  52    57  |  43    47  |  53    44  |  56  
+    6      AB_Center    60  |  40    56  |  44    55  |  45    42  |  58    54  |  46    55  |  45    54  |  46    55  |  45  
+    7     AB_Improved   49  |  51    50  |  50    46  |  54    38  |  62    48  |  52    49  |  51    40  |  60    54  |  46  
+--------------------------------------------------------------------------
+           Win Rate:      67.3%        67.4%        65.4%        59.6%        64.7%        68.4%        63.1%        67.4%    
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved    Custom    Diff_dist_sum Mod Stages  
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      89  |  11    93  |   7    92  |   8    91  |   9  
+    2       MM_Open     76  |  24    66  |  34    68  |  32    73  |  27  
+    3      MM_Center    72  |  28    65  |  35    74  |  26    71  |  29  
+    4     MM_Improved   67  |  33    69  |  31    77  |  23    69  |  31  
+    5       AB_Open     49  |  51    50  |  50    55  |  45    52  |  48  
+    6      AB_Center    54  |  46    57  |  43    50  |  50    57  |  43  
+    7     AB_Improved   46  |  54    49  |  51    53  |  47    51  |  49  
+--------------------------------------------------------------------------
+           Win Rate:      64.7%        64.1%        67.0%        66.3%    
+
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved Diff_dist_sum    Stage    
+                        Won | Lost   Won | Lost   Won | Lost 
+    1       Random      53  |   7    58  |   2    56  |   4  
+    2       MM_Open     44  |  16    43  |  17    44  |  16  
+    3      MM_Center    46  |  14    47  |  13    46  |  14  
+    4     MM_Improved   39  |  21    47  |  13    41  |  19  
+    5       AB_Open     33  |  27    31  |  29    29  |  31  
+    6      AB_Center    32  |  28    33  |  27    33  |  27  
+    7     AB_Improved   27  |  33    28  |  32    27  |  33  
+--------------------------------------------------------------------------
+           Win Rate:      65.2%        68.3%        65.7%    
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved Diff_dist_sum Diff_SqDist 
+                        Won | Lost   Won | Lost   Won | Lost 
+    1       Random      55  |   5    59  |   1    52  |   8  
+    2       MM_Open     43  |  17    45  |  15    44  |  16  
+    3      MM_Center    48  |  12    47  |  13    43  |  17  
+    4     MM_Improved   46  |  14    43  |  17    45  |  15  
+    5       AB_Open     29  |  31    31  |  29    29  |  31  
+    6      AB_Center    33  |  27    36  |  24    27  |  33  
+    7     AB_Improved   27  |  33    34  |  26    26  |  34  
+--------------------------------------------------------------------------
+           Win Rate:      66.9%        70.2%        63.3%    
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved Diff_dist_sum   DD_half      DD_subt   
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      58  |   2    58  |   2    57  |   3    58  |   2  
+    2       MM_Open     43  |  17    44  |  16    44  |  16    46  |  14  
+    3      MM_Center    41  |  19    44  |  16    47  |  13    43  |  17  
+    4     MM_Improved   44  |  16    45  |  15    47  |  13    48  |  12  
+    5       AB_Open     28  |  32    34  |  26    32  |  28    32  |  28  
+    6      AB_Center    38  |  22    32  |  28    33  |  27    35  |  25  
+    7     AB_Improved   28  |  32    28  |  32    32  |  28    25  |  35  
+--------------------------------------------------------------------------
+           Win Rate:      66.7%        67.9%        69.5%        68.3%    
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved Diff_dist_sum   DD_half      DD_subt   DD_full_subt    DD_pt_8   
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      57  |   3    52  |   8    58  |   2    58  |   2    60  |   0    57  |   3  
+    2       MM_Open     46  |  14    44  |  16    40  |  20    43  |  17    50  |  10    42  |  18  
+    3      MM_Center    44  |  16    42  |  18    42  |  18    46  |  14    45  |  15    45  |  15  
+    4     MM_Improved   41  |  19    45  |  15    42  |  18    49  |  11    46  |  14    41  |  19  
+    5       AB_Open     29  |  31    29  |  31    28  |  32    28  |  32    35  |  25    33  |  27  
+    6      AB_Center    36  |  24    37  |  23    32  |  28    32  |  28    37  |  23    34  |  26  
+    7     AB_Improved   33  |  27    31  |  29    33  |  27    32  |  28    31  |  29    23  |  37  
+--------------------------------------------------------------------------
+           Win Rate:      68.1%        66.7%        65.5%        68.6%        72.4%        65.5%    
+                
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved DD_full_subt  DD_dbl_sub   Adv stages  
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      52  |   8    55  |   5    56  |   4    57  |   3  
+    2       MM_Open     38  |  22    43  |  17    48  |  12    48  |  12  
+    3      MM_Center    44  |  16    39  |  21    43  |  17    55  |   5  
+    4     MM_Improved   42  |  18    43  |  17    42  |  18    44  |  16  
+    5       AB_Open     30  |  30    37  |  23    32  |  28    29  |  31  
+    6      AB_Center    34  |  26    30  |  30    32  |  28    36  |  24  
+    7     AB_Improved   31  |  29    31  |  29    27  |  33    30  |  30  
+--------------------------------------------------------------------------
+           Win Rate:      64.5%        66.2%        66.7%        71.2%    
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved  Adv stages  
+                        Won | Lost   Won | Lost 
+    1       Random      74  |   6    74  |   6  
+    2       MM_Open     58  |  22    55  |  25  
+    3      MM_Center    58  |  22    52  |  28  
+    4     MM_Improved   62  |  18    59  |  21  
+    5       AB_Open     45  |  35    39  |  41  
+    6      AB_Center    46  |  34    46  |  34  
+    7     AB_Improved   38  |  42    40  |  40  
+--------------------------------------------------------------------------
+           Win Rate:      68.0%        65.2%    
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved  Adv stages  
+                        Won | Lost   Won | Lost 
+    1       Random      77  |   3    76  |   4  
+    2       MM_Open     59  |  21    55  |  25  
+    3      MM_Center    62  |  18    57  |  23  
+    4     MM_Improved   52  |  28    56  |  24  
+    5       AB_Open     49  |  31    45  |  35  
+    6      AB_Center    47  |  33    48  |  32  
+    7     AB_Improved   44  |  36    39  |  41  
+--------------------------------------------------------------------------
+           Win Rate:      69.6%        67.1%    
+
+
+ Match #   Opponent    AB_Improved Diff Late GameDD_full_subt  DD_dbl_sub   DD_2.5_sub    DD_3_sub   
+                        Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost   Won | Lost 
+    1       Random      55  |   5    56  |   4    58  |   2    58  |   2    56  |   4    56  |   4  
+    2       MM_Open     43  |  17    41  |  19    41  |  19    50  |  10    45  |  15    48  |  12  
+    3      MM_Center    48  |  12    45  |  15    51  |   9    41  |  19    44  |  16    38  |  22  
+    4     MM_Improved   41  |  19    48  |  12    43  |  17    45  |  15    43  |  17    46  |  14  
+    5       AB_Open     37  |  23    29  |  31    33  |  27    25  |  35    29  |  31    31  |  29  
+    6      AB_Center    30  |  30    37  |  23    35  |  25    32  |  28    35  |  25    38  |  22  
+    7     AB_Improved   29  |  31    25  |  35    32  |  28    32  |  28    29  |  31    28  |  32  
+--------------------------------------------------------------------------
+           Win Rate:      67.4%        66.9%        69.8%        67.4%        66.9%        67.9%    
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved DD_half_subt  DD_eq_subt  
+                        Won | Lost   Won | Lost   Won | Lost 
+    1       Random      53  |   7    58  |   2    55  |   5  
+    2       MM_Open     47  |  13    43  |  17    49  |  11  
+    3      MM_Center    38  |  22    45  |  15    45  |  15  
+    4     MM_Improved   40  |  20    43  |  17    39  |  21  
+    5       AB_Open     30  |  30    29  |  31    31  |  29  
+    6      AB_Center    35  |  25    34  |  26    32  |  28  
+    7     AB_Improved   31  |  29    29  |  31    30  |  30  
+--------------------------------------------------------------------------
+           Win Rate:      65.2%        66.9%        66.9%  
+
+\end{verbatim}
+
+
+\end{document}

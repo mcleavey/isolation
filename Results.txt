@@ -1,0 +1,108 @@
+Results:
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved 
+                        Won | Lost 
+    1    AB_Improved NS  25  |  55  
+--------------------------------------------------------------------------
+           Win Rate:      31.2%    
+(aind) mcleavey@clara-AI:~/udacity/isolation_project/AIND-Isolation$ python tournament.py
+
+This script evaluates the performance of the custom_score evaluation
+function against a baseline agent using alpha-beta search and iterative
+deepening (ID) called `AB_Improved`. The three `AB_Custom` agents use
+ID and alpha-beta search with the custom_score functions defined in
+game_agent.py.
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved 
+                        Won | Lost 
+    1    AB_Improved NS  23  |  57  
+--------------------------------------------------------------------------
+           Win Rate:      28.8%    
+
+
+
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved 
+                        Won | Lost 
+    1     AB_Open_NS    28  |  52  
+--------------------------------------------------------------------------
+           Win Rate:      35.0%    
+
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved 
+                        Won | Lost 
+    1     AB_Open_NS    33  |  47  
+    2       AB_Open     18  |  62  
+    3     AB_Improved   43  |  37  
+--------------------------------------------------------------------------
+           Win Rate:      39.2%    
+
+
+                                   *************************                         
+                                        Playing Matches                              
+                                   *************************                         
+
+            Match #   Opponent    AB_Custom_3 AB_Custom_3_Sort
+                                   Won | Lost   Won | Lost 
+               1       AB_Open     67  |  13    72  |   8  
+               2     AB_Improved   77  |   3    78  |   2  
+           --------------------------------------------------------------------------
+                      Win Rate:      90.0%        93.8%    
+
+
+
+
+with randomizing moves list
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Custom_3 AB_Custom_3_Sort
+                        Won | Lost   Won | Lost 
+    1       AB_Open     40  |  40    36  |  44  
+    2     AB_Improved   73  |   7    69  |  11  
+--------------------------------------------------------------------------
+           Win Rate:      70.6%        65.6%    
+
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent    AB_Improved  AB_Custom_3 
+                        Won | Lost   Won | Lost 
+    1       AB_Open     11  |  69    42  |  38  
+--------------------------------------------------------------------------
+           Win Rate:      13.8%        52.5%    
+
+
+Still without first two random moves
+
+                        *************************                         
+                             Playing Matches                              
+                        *************************                         
+
+ Match #   Opponent     AB_Custom   AB_Custom_2  AB_Custom_3 
+                        Won | Lost   Won | Lost   Won | Lost 
+    1       AB_Open     78  |  22    73  |  27    89  |  11  
+
