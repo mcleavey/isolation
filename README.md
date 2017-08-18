@@ -11,4 +11,4 @@ This project uses a version of Isolation where each agent is restricted to L-sha
 
 Additionally, agents will have a fixed time limit each turn to search for the best move and respond.  If the time limit expires during a player's turn, that player forfeits the match, and the opponent wins.
 
-This project is from the AI Udacity Course. 
+This project is from the AI Udacity Course. Udacity provided the project structure and the game setup (including isolation.py and tournament.py). I created the AI agent (game_agent.py).
